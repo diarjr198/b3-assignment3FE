@@ -249,6 +249,16 @@ header .cart-items-container .btn {
   header .icon fa-icon {
     margin-left: 1rem !important;
   }
+
+  header .icon .user .user-list {
+    left: calc(50% - 105px) !important;
+  }
+}
+
+@media only screen and (max-width: 965px) {
+  header .icon .user .user-list {
+    left: calc(50% - 125px);
+  }
 }
 
 @media only screen and (min-width: 769px) {
