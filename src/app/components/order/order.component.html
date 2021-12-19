@@ -1,0 +1,36 @@
+<div class="shopping-cart">
+  <!-- Title -->
+  <div class="title">Order Bag</div>
+
+  <!-- order #1 -->
+  <div
+    class="item"
+    *ngFor="let order of orders; let i = index"
+    [style.height]="order?.status === 'Menunggu Pembayaran' ? '220px' : 'auto'"
+  >
+    <input type="hidden" [value]="order?._id" #id />
+
+    <div class="image">
+      <img src="{{ order?.product?.imagePath }}" alt="" />
+    </div>
+
+    <div class="description">
+      <span
+        ><b>{{ order?.product?.title }}</b></span
+      >
+      <span>Receive Name: {{ order?.nameReceive }}</span>
+      <span>Address: {{ order?.address }}</span>
+      <span>Amount: {{ order?.amount }}</span>
+      <span>Status: {{ order?.status }}</span>
+    </div>
+
+    <div class="total-price">IDR {{ order?.total }}</div>
+
+    <div
+      class="checkout"
+      *ngIf="order?.status === 'Menunggu Pembayaran' ? true : false"
+    >
+      <a class="button" (click)="checkout(id.value)">Checkout</a>
+    </div>
+  </div>
+</div>

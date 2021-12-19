@@ -1,0 +1,17 @@
+.col-md-12 {
+  margin-top: 150px;
+  margin-bottom: 40px;
+}
+
+.card-container {
+  max-width: 400px;
+}
+
+#profile-img {
+  max-width: 400px;
+  border-radius: 5px;
+}
+
+.alert {
+  margin-bottom: 0;
+}

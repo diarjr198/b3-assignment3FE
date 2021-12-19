@@ -1,0 +1,22 @@
+<div class="container">
+  <!-- <div class="block profile-pic">
+    <img
+      src="https://images.unsplash.com/photo-1519180091-1ba90342d1af?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=991cd0bbdad4a795fdea7e0678b0ae82&auto=format&fit=crop&w=1534&q=80"
+      alt=""
+    />
+  </div> -->
+  <div class="block information">
+    <h1>Order Created!</h1>
+    <h1 class="no-order">No. Pesanan: {{ order?._id }}</h1>
+    <p class="expertise">Silahkan lakukan pembayaran ke rekening berikut:</p>
+    <address>BCA: 899045XXXX</address>
+    <address>Total: {{ order?.total }}</address>
+    <p>
+      Jika sudah melakukan transfer sesuai nominal, klik tombol dibawah untuk
+      konfirmasi!
+    </p>
+    <button class="btn btn-danger me-2" (click)="cancel()">Cancel</button>
+    <button class="btn btn-primary" (click)="submit()">Sudah Transfer</button>
+  </div>
+</div>
+<!-- /.container -->

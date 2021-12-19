@@ -1,0 +1,60 @@
+<div class="shopping-cart">
+  <!-- Title -->
+  <div class="title">Shopping Bag</div>
+
+  <!-- Product #1 -->
+  <div class="item" *ngFor="let product of cartDB; let i = index">
+    <input type="hidden" [value]="product?._id" #id />
+    <div class="buttons" (click)="deleteCart(id.value)">
+      <span class="delete-btn"></span>
+    </div>
+
+    <div class="image">
+      <img src="{{ product?.product?.imagePath }}" alt="" />
+    </div>
+
+    <div class="description">
+      <span>{{ product?.product?.title }}</span>
+      <span>IDR {{ product?.product?.price }}</span>
+    </div>
+
+    <div class="quantity">
+      <button
+        class="minus-btn"
+        type="button"
+        name="button"
+        (click)="dec(amount.value, product?.product?.price)"
+      >
+        <img src="https://designmodo.com/demo/shopping-cart/minus.svg" alt="" />
+      </button>
+      <input type="text" name="name" [value]="value" min="1" #amount />
+      <button
+        class="plus-btn"
+        type="button"
+        name="button"
+        (click)="inc(amount.value, product?.product?.price)"
+      >
+        <img src="https://designmodo.com/demo/shopping-cart/plus.svg" alt="" />
+      </button>
+    </div>
+
+    <div class="total-price">
+      IDR {{ value > 1 ? total : product?.product?.price }}
+    </div>
+
+    <div class="checkout">
+      <a
+        class="button"
+        (click)="
+          checkout(
+            id.value,
+            product?.product?._id,
+            amount.value,
+            value > 1 ? total : product?.product?.price
+          )
+        "
+        >Checkout</a
+      >
+    </div>
+  </div>
+</div>

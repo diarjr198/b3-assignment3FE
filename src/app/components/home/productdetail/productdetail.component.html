@@ -1,0 +1,30 @@
+<body>
+  <div class="container">
+    <div class="imgBx">
+      <img src="{{ products.imagePath }}" alt="Nike Jordan Proto-Lyte Image" />
+    </div>
+    <div class="details">
+      <div class="content">
+        <h2>
+          {{ products.title }} <br />
+          <span>{{ products.category?.category }}</span>
+        </h2>
+        <p>
+          {{ products.description }}
+        </p>
+        <p class="product-colors">
+          <input type="hidden" value="{{ products.imagePath }}" #image />
+          Available Colors:
+          <span
+            class="black active"
+            data-color-primary="#000"
+            data-color-sec="#212121"
+            data-pic="image.value"
+          ></span>
+        </p>
+        <h3>IDR {{ products.price }}</h3>
+        <a (click)="addToCart(products?._id)"><button>Buy Now</button></a>
+      </div>
+    </div>
+  </div>
+</body>

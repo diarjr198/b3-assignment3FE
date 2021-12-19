@@ -1,0 +1,42 @@
+<header>
+  <a routerLink="home" class="logo">
+    <img src="../../../assets/images/components/logo.png" alt="" />
+  </a>
+
+  <nav class="navbar">
+    <a routerLink="home" routerLinkActive="active">Home</a>
+    <a routerLink="product" routerLinkActive="active">Product</a>
+    <a routerLink="about" routerLinkActive="active">About</a>
+    <a routerLink="contact" routerLinkActive="active">Contact</a>
+  </nav>
+
+  <div class="icon">
+    <fa-icon [icon]="faSearch" id="btn-search"></fa-icon>
+    <a href="/cart" *ngIf="!isLoggedIn"
+      ><fa-icon [icon]="faShoppingCart" id="btn-cart"></fa-icon
+      ><span class="badge" [innerHTML]="cart ? cart.length : '0'"></span
+    ></a>
+    <a href="/cart" *ngIf="isLoggedIn"
+      ><fa-icon [icon]="faShoppingCart" id="btn-cart"></fa-icon
+      ><span class="badge" [innerHTML]="cartDB ? cartDB.length : '0'"></span
+    ></a>
+    <div class="user">
+      <fa-icon [icon]="faUser" id="btn-user" (click)="showUserMenu()"></fa-icon>
+      <div class="user-list" *ngIf="user" (click)="ClickedOut($event)">
+        <a routerLink="signin" *ngIf="!isLoggedIn">Sign In</a>
+        <a routerLink="signup" *ngIf="!isLoggedIn">Sign Up</a>
+        <a class="user" routerLink="profile" *ngIf="isLoggedIn">Profile</a>
+        <a class="user" routerLink="order" *ngIf="isLoggedIn">Order</a>
+        <a class="user" (click)="logout()" *ngIf="isLoggedIn">Logout</a>
+      </div>
+    </div>
+    <fa-icon [icon]="faBars" id="btn-menu" (click)="showBar()"></fa-icon>
+  </div>
+
+  <nav class="navbar" id="hiddenMenu" *ngIf="show" (click)="ClickedOut($event)">
+    <a routerLink="home" routerLinkActive="active">Home</a>
+    <a routerLink="product" routerLinkActive="active">Product</a>
+    <a routerLink="about" routerLinkActive="active">About</a>
+    <a routerLink="contact" routerLinkActive="active">Contact</a>
+  </nav>
+</header>

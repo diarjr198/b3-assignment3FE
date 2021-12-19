@@ -1,0 +1,41 @@
+h1 {
+  font-size: 30px;
+}
+
+h1.no-order {
+  font-size: 20px;
+}
+
+p.expertise {
+  padding-bottom: 10px;
+  border-bottom: 2px solid #000;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.container {
+  max-width: 600px;
+  height: auto;
+  margin: 105px auto 0;
+  border: 5px solid #000;
+  background: #1380a1;
+  /* display: grid;
+  grid-template-columns: 200px auto; */
+}
+
+/* .profile-pic img {
+  width: 100%;
+  margin: 20px;
+  border: 5px solid #000;
+} */
+
+.information {
+  box-sizing: border-box;
+  padding: 20px 40px 20px 50px;
+}
+
+address {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
