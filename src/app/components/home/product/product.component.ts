@@ -43,6 +43,10 @@ export class ProductComponent implements OnInit {
           console.log(this.errorMessage);
         }
       );
+    } else {
+      setTimeout(() => {
+        window.location.href = 'cart';
+      }, 500);
     }
   }
 }
