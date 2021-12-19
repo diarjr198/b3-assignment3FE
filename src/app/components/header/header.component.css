@@ -245,6 +245,10 @@ header .cart-items-container .btn {
   header .navbar a {
     margin: 0;
   }
+
+  header .icon fa-icon {
+    margin-left: 1rem !important;
+  }
 }
 
 @media only screen and (min-width: 769px) {
